@@ -752,3 +752,8 @@ async def live_detect(
             image
 
     }
+from backend.quality_api import router as quality_router
+from backend.quality_db import init_db
+
+init_db()w
+app.include_router(quality_router)

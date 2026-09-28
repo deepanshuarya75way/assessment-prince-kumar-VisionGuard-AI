@@ -3,3 +3,6 @@ opencv-python==5.0.0.93
 torch==2.8.0
 torchvision==0.23.0
 ultralytics==8.4.115
+fastapi
+uvicorn
+pydantic
