@@ -41,13 +41,13 @@ CURRENT_TIMESTAMP,
 
   cursor.execute("""
    CREATE TABLE IF NOT EXISTS dataset_items(
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   prediction_id INTEGER NOT NULL UNIQUE,
-   included INTEGER NOT NULL DEFAULT 0,
-   created_at TIMESTAMP DEFAULT
-CURRENT_TIMESTAMP,
-    FOREIGEN KEY (prediction_id)
-      REFERENCES predictions(id)
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     prediction_id INTEGER NOT NULL UNIQUE,
+     included INTEGER NOT NULL DEFAULT 0,
+     created_at TIMESYAMP DEFAULT
+ CURRENT_TIMESTAMP,
+    FOREIGN KEY (prediction_id) REFERENCES
+predictions(id)
    )
   """)
 

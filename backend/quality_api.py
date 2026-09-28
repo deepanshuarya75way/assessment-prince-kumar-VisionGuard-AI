@@ -1,3 +1,4 @@
+
 from fastapi import APIRouter 
 from pydantic import BaseModel
 from.quality_db import get_connection
@@ -10,13 +11,7 @@ class Prediction(BaseModel):
   predicted_label: str
   confidence: float = 0.0
 
-  class Review(BaseModel):
-    prediction_id: int 
-    review_status: str 
-    human_label: str 
-    comment: str =""
-
-    class Dataset(BaseModel):
+class Dataset(BaseModel):
       included: bool
 
 @router.post("/predictions")
@@ -54,7 +49,7 @@ def predictions():
     return[dict(row)for row in rows] 
 
 @router.post("/reviews")
-def add_review(data:"Review"):
+def add_review(data:dict):
     db = get_connection()
 
     db.execute("""
